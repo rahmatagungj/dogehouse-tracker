@@ -47,8 +47,11 @@ const Container = styled.div`
   color: white;
   padding: 10px;
   border-radius: 1em;
-  min-width: 680px;
+  width: 680px;
   margin: 0px auto;
+  @media all and (max-width: 900px) {
+    max-width: 78%;
+  }
   h2 {
     margin-bottom: 5px;
     display: flex;
