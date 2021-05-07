@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import Card from "./commons/Card";
 
 const { useEffect, useState } = React;
@@ -13,10 +12,9 @@ const Statistics = () => {
         if (res.status === 200) return res.json();
       })
       .then((resJson) => {
-        console.log(resJson);
         setStatistic([resJson]);
-        console.log(statistic[0]);
         setLoading(false);
+        console.log(resJson);
       });
 
     return () => {
@@ -25,22 +23,21 @@ const Statistics = () => {
   }, []);
 
   return (
-    <Flex>
-      {!loading
+    <>
+      {!loading && statistic.length !== 0
         ? statistic.map((r, idx) => (
-            <Card key={idx} value={r.totalOnline} label={r.totalOnline} />
+            <Card
+              key={idx}
+              totalBotOnline={r.totalBotsOnline}
+              totalOnline={r.totalOnline}
+              totalRegistered={r.totalRegistered}
+              totalRooms={r.totalRooms}
+              totalSchedulesRooms={r.totalScheduledRooms}
+            />
           ))
-        : null}
-    </Flex>
+        : "Loading data ..."}
+    </>
   );
 };
-
-const Flex = styled.div`
-  display: flex;
-  margin: 0px auto;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
 
 export default Statistics;

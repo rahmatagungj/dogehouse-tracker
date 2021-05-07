@@ -1,10 +1,11 @@
 import "./App.css";
+import Header from "./components/Header";
 import Statistics from "./components/Statistics";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">hai</header>
+      <Header />
       <Statistics />
     </div>
   );

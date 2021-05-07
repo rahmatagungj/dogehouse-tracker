@@ -1,14 +1,45 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = ({ value, label }) => {
+const Card = ({
+  totalBotOnline,
+  totalOnline,
+  totalRegistered,
+  totalRooms,
+  totalSchedulesRooms,
+}) => {
   return (
-    <Cards>
-      <h2>{value}</h2>
-      <p>{label}</p>
-    </Cards>
+    <Container>
+      <Cards>
+        <h2>{totalOnline.toLocaleString()}</h2>
+        <p>total online</p>
+      </Cards>
+      <Cards>
+        <h2>{totalRegistered.toLocaleString()}</h2>
+        <p>total registered</p>
+      </Cards>
+      <Cards>
+        <h2>{totalRooms.toLocaleString()}</h2>
+        <p>total rooms</p>
+      </Cards>
+      <Cards>
+        <h2>{totalSchedulesRooms.toLocaleString()}</h2>
+        <p>total Schedules Rooms</p>
+      </Cards>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  background-color: #1f2937;
+  display: flex;
+  margin: 0px auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 700px;
+  border-radius: 1em;
+`;
 
 const Cards = styled.div`
   padding: 25px;
