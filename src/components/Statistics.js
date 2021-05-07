@@ -35,7 +35,7 @@ const Statistics = () => {
               totalSchedulesRooms={r.totalScheduledRooms}
             />
           ))
-        : "Loading data ..."}
+        : null}
     </>
   );
 };

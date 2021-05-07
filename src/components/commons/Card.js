@@ -39,6 +39,9 @@ const Container = styled.div`
   flex-wrap: wrap;
   max-width: 700px;
   border-radius: 1em;
+  @media all and (max-width: 900px) {
+    max-width: 80%;
+  }
 `;
 
 const Cards = styled.div`
